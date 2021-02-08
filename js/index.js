@@ -60,3 +60,31 @@ ctaButton.textContent = siteContent.cta.button
 const ctaImg = document.querySelector('#cta-img')
 ctaImg.setAttribute('src', siteContent.cta["img-src"])
 /* END CTA */
+
+/* MAIN CONTENT */
+const getContentFromMainContent = (sectionName) => {
+  return {
+    h4: siteContent['main-content'][`${sectionName}-h4`],
+    content: siteContent['main-content'][`${sectionName}-content`]
+  }
+}
+
+const updateMainContentSection = (parentEl, sectionNames) => {
+  parentEl.querySelectorAll('.text-content').forEach((textEl, idx) => {
+    const { h4, content } = getContentFromMainContent(sectionNames[idx])
+    textEl.querySelector('h4').textContent = h4
+    textEl.querySelector('p').textContent = content
+  })
+}
+
+const topContent = document.querySelector('.top-content')
+const topContentSectionNames = ['features', 'about']
+updateMainContentSection(topContent, topContentSectionNames)
+
+const bottomContent = document.querySelector('.bottom-content')
+const bottomContentSectionNames = ['services', 'product', 'vision']
+updateMainContentSection(bottomContent, bottomContentSectionNames)
+
+const middleImg = document.querySelector('#middle-img')
+middleImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
+/* END MAIN CONTENT */
