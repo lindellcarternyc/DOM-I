@@ -41,9 +41,22 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+/* HEADER */
 // Navigation
 const nav = document.querySelector('nav')
 const navLinks = nav.querySelectorAll('a')
 navLinks.forEach((navLink, idx) => {
   navLink.textContent = siteContent.nav[`nav-item-${idx + 1}`]
 })
+/* END HEADER */
+
+/* CTA */
+const ctaHeader = document.querySelector('.cta-text > h1')
+ctaHeader.textContent = siteContent.cta.h1
+
+const ctaButton = document.querySelector('.cta-text > button')
+ctaButton.textContent = siteContent.cta.button
+
+const ctaImg = document.querySelector('#cta-img')
+ctaImg.setAttribute('src', siteContent.cta["img-src"])
+/* END CTA */
