@@ -44,10 +44,22 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 /* HEADER */
 // Navigation
 const nav = document.querySelector('nav')
-const navLinks = nav.querySelectorAll('a')
-navLinks.forEach((navLink, idx) => {
-  navLink.textContent = siteContent.nav[`nav-item-${idx + 1}`]
-})
+const navLinks = [...nav.querySelectorAll('a')]
+const createNavLink = text => {
+  const navLink = document.createElement('a')
+  navLink.style.color = 'green'
+  navLink.textContent = text
+  return navLink
+}
+
+if (navLinks.length <= 6) {
+  navLinks.forEach((navLink, idx) => {
+    navLink.textContent = siteContent.nav[`nav-item-${idx + 1}`]
+    navLink.style.color = 'green'
+  })
+  nav.prepend(createNavLink('Hello'))
+  nav.appendChild(createNavLink('World!'))
+} 
 /* END HEADER */
 
 /* CTA */
