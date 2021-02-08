@@ -195,6 +195,6 @@ updateButton.addEventListener('click', () => {
   }
   update()
 })
-document.querySelector('.cta-text').appendChild(updateButton)
 
+document.querySelector('.cta-text').appendChild(updateButton)
 update()
