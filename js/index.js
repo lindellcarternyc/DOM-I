@@ -88,3 +88,16 @@ updateMainContentSection(bottomContent, bottomContentSectionNames)
 const middleImg = document.querySelector('#middle-img')
 middleImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
 /* END MAIN CONTENT */
+
+/* CONTACT */
+const contact = document.querySelector('.contact')
+contact.querySelector('h4').textContent = siteContent.contact['contact-h4']
+const [address, phone, email] = [...contact.querySelectorAll('p')]
+address.textContent = siteContent.contact.address
+phone.textContent = siteContent.contact.phone
+email.textContent = siteContent.contact.email
+/* END CONTACT */
+
+/* FOOTER */
+document.querySelector('footer > p').textContent = siteContent.footer.copyright
+/* END FOOTER */
